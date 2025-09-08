@@ -1,0 +1,47 @@
+name: Vouch
+version: '${version}'
+main: dev.aari.vouch.Vouch
+api-version: '1.21'
+author: aari
+description: A comprehensive reputation and vouching system for Minecraft servers
+website: https://github.com/aari/vouch
+
+commands:
+  vouch:
+    description: Vouch for a player
+    usage: /vouch <player>
+    permission: vouch.use
+  supervouch:
+    description: Give a super vouch to a player
+    usage: /supervouch <player>
+    permission: vouch.super
+  devouch:
+    description: Remove a vouch from a player
+    usage: /devouch <player>
+    permission: vouch.remove
+  reputation:
+    description: Check a player's reputation
+    usage: /reputation <player>
+    permission: vouch.check
+
+permissions:
+  vouch.use:
+    description: Allows using the vouch command
+    default: true
+  vouch.super:
+    description: Allows using the supervouch command
+    default: op
+  vouch.remove:
+    description: Allows using the devouch command
+    default: true
+  vouch.check:
+    description: Allows checking player reputation
+    default: true
+  vouch.admin:
+    description: Full access to all vouch features
+    default: op
+    children:
+      - vouch.use
+      - vouch.super
+      - vouch.remove
+      - vouch.check

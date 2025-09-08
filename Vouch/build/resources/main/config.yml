@@ -1,0 +1,62 @@
+# Vouch Plugin Configuration
+# Version: 1.0.0
+
+# Data Storage Settings
+data:
+  # Auto-save interval in minutes
+  auto-save-interval: 5
+
+  # Maximum number of player data files to keep in memory
+  cache-size: 1000
+
+# Reputation Calculation Settings
+reputation:
+  # Weight of super vouches (regular vouches = 1 point)
+  super-vouch-weight: 2
+
+  # Weight of devouches (negative impact)
+  devouch-weight: 1
+
+  # Minimum reputation needed for each star level (0-5 stars)
+  star-thresholds:
+    1-star: 1
+    2-star: 3
+    3-star: 7
+    4-star: 15
+    5-star: 30
+
+# Command Settings
+commands:
+  # Whether to notify the target player when they receive vouches/devouches
+  notify-target: true
+
+  # Daily vouch limit per target player (24 hours)
+  daily-vouch-limit: true
+
+  # Whether players can change their vouch type (vouch -> supervouch -> devouch)
+  allow-vouch-changes: true
+
+# Display Settings
+display:
+  # Date format for reputation command
+  date-format: "MMM dd, yyyy"
+
+  # Whether to use fancy Unicode characters in displays
+  use-unicode: true
+
+  # Color scheme for trust levels
+  trust-colors:
+    highly-trusted: "&2"      # Dark Green
+    trusted: "&a"             # Green
+    reliable: "&e"            # Yellow
+    neutral: "&6"             # Gold
+    caution: "&c"             # Red
+    untrustworthy: "&4"       # Dark Red
+
+# Permission Settings
+permissions:
+  # Whether to give vouch.use permission to all players by default
+  default-vouch-permission: true
+
+  # Whether to require special permission for self-reputation checks
+  require-self-check-permission: false
